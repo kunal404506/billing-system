@@ -1,0 +1,47 @@
+server:
+  port: 2025
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/erpgstbilling?createDatabaseIfNotExist=true&autoReconnect=true&showSSL=false
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # Gmail Properties
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jadhavkiran2011@gmail.com
+    password: rqou mvly pbtb fzil
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  main:
+    allow-circular-references: true
+
+  #MultiPart files Configuration
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+      file-size-threshold: 3KB
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000    # A Day in MilliSeconds
+
+# Local Path for Storing PDF
+local:
+  disk:
+    path: D:/BillingSys/
